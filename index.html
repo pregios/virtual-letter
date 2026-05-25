@@ -10,10 +10,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: url("YOUR-IMAGE-LINK.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(-45deg, #ff4da6, #ff99cc, #ffd1dc, #ff66b2);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
 }
-
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
