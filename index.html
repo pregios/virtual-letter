@@ -2,54 +2,82 @@
 <html>
 <head>
   <title>Virtual Letter</title>
- <style>
-body {
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background: linear-gradient(-45deg, #ff4da6, #ff99cc, #ffd1dc, #ff66b2);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-}
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-.floating-letter {
-  font-size: 40px;
-  animation: float 3s ease-in-out infinite;
-}
+      background: linear-gradient(-45deg, #ff4da6, #ff99cc, #ffd1dc, #ff66b2);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
-</style>
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 📜 PARCHMENT LETTER */
+    .letter {
+      max-width: 600px;
+      padding: 30px;
+      border-radius: 10px;
+
+      background: linear-gradient(#f5e6c8, #e8d3a9);
+      border: 3px solid #b08a4f;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+      font-family: Georgia, serif;
+      color: #4b2e1e;
+
+      text-align: center;
+    }
+
+    /* 💌 FLOAT EFFECT */
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+  </style>
 </head>
+
 <body>
 
-<div class="floating-letter">
-  <h1>💌 A Letter For You</h1>
+  <div class="letter floating">
 
-  <p>hi cycy!!,</p>
+    <h1 class="floating">💌 A Letter For You</h1>
 
-  <p>
-   I just wanted to write you this before you leave for your ROTC training.
+    <p>hi cycy!!,</p>
 
-I hope you do well and stay safe while you’re there. I know ang training didto kay really tough, but please don’t be too harsh on yourself. You don’t always have to push yourself to the limit—it's okay to rest too.
-Please remember to eat properly and take care mong samson, ay ayaw na apila siya kay lahi nga gurlalo iyang gi invite instead saiyang uyab, anw your health matters just as much as your discipline and duties.
-I’ll be praying for you while you’re away. I hope everything goes smoothly for you and that you come back feeling stronger and more confident.
-Take care daiii
-  </p>
+    <p>
+    I hope you do well and stay safe while you’re there. I know ang training didto kay really tough, but please don’t be too harsh on yourself. You don’t always have to push yourself to the limit—it's okay to rest too. Please remember to eat properly and take care mong samson, ay ayaw na apila siya kay lahi nga gurlalo iyang gi invite instead saiyang uyab, anw your health matters just as much as your discipline and duties. I’ll be praying for you while you’re away. I hope everything goes smoothly for you and that you come back feeling stronger and more confident. Take care daiii
+    </p>
 
-  <p>— Presyosaaa</p>
-</div>
+    <p>— Presyosaaa</p>
+
+    <p><i>Ps: pink na siya kay ana ka ganahan kag fink fink 💗</i></p>
+
+  </div>
 
 </body>
 </html>
