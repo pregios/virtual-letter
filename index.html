@@ -10,10 +10,33 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: Georgia, serif;
+    }
 
-      background: linear-gradient(-45deg, #ff4da6, #ff99cc, #ffd1dc, #ff66b2);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
+    /* 🌸 BEFORE OPENING */
+    .start-screen {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(-45deg, #2b1055, #7597de);
+    }
+
+    /* 💖 AFTER OPENING */
+    .letter-screen {
+      width: 100%;
+      height: 100vh;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      
+background:
+  linear-gradient(rgba(255, 77, 166, 0.3), rgba(255, 153, 204, 0.3)),
+  url("download.jpg") no-repeat center center fixed;
+
+background-size: cover;
     }
 
     @keyframes gradientMove {
@@ -22,40 +45,41 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 📜 PARCHMENT LETTER */
+    /* 💌 ENVELOPE */
+    .envelope {
+      width: 220px;
+      height: 150px;
+      background: #f5e6c8;
+      border: 3px solid #b08a4f;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    /* 📜 LETTER */
     .letter {
       max-width: 600px;
       padding: 30px;
-      border-radius: 10px;
-
-      background: linear-gradient(#f5e6c8, #e8d3a9);
+      background: rgba(245, 230, 200, 0.9);
       border: 3px solid #b08a4f;
-
+      border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
-      font-family: Georgia, serif;
       color: #4b2e1e;
-
       text-align: center;
+      animation: fadeIn 1s ease;
     }
 
-    /* 💌 FLOAT EFFECT */
-    .floating {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
-    }
-
-    h1 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      line-height: 1.5;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
   </style>
@@ -63,21 +87,38 @@
 
 <body>
 
-  <div class="letter floating">
+  <!-- 💌 ENVELOPE SCREEN -->
+  <div class="start-screen" id="start">
+    <div class="envelope" onclick="openLetter()">
+      💌 Click to Open
+    </div>
+  </div>
 
-    <h1 class="floating">💌 A Letter For You</h1>
+  <!-- 📜 LETTER SCREEN -->
+  <div class="letter-screen" id="letterScreen">
 
-    <p>hi cycy!!,</p>
+    <div class="letter">
 
-    <p>
-    I hope you do well and stay safe while you’re there. I know ang training didto kay really tough, but please don’t be too harsh on yourself. You don’t always have to push yourself to the limit—it's okay to rest too. Please remember to eat properly and take care mong samson, ay ayaw na apila siya kay lahi nga gurlalo iyang gi invite instead saiyang uyab, anw your health matters just as much as your discipline and duties. I’ll be praying for you while you’re away. I hope everything goes smoothly for you and that you come back feeling stronger and more confident. Take care daiii
-    </p>
+      <h1>💌 A Letter For You</h1>
 
-    <p>— Presyosaaa</p>
+      <p>hi cycy!!,</p>
 
-    <p><i>Ps: pink na siya kay ana ka ganahan kag fink fink 💗</i></p>
+      <p>
+    I just wanted to write you this before you leave for your ROTC training. I hope you do well and stay safe while you’re there. I know ang training didto kay really tough, but please don’t be too harsh on yourself. You don’t always have to push yourself to the limit—it's okay to rest too. Please remember to eat properly and take care mong samson, ay ayaw na apila siya kay lahi nga gurlalo iyang gi invite instead saiyang uyab, anw your health matters just as much as your discipline and duties. I’ll be praying for you while you’re away. I hope everything goes smoothly for you and that you come back feeling stronger and more confident. Take care daiii
+      <p>— Presyosaaa</p>
+
+      <p><i>Ps: pink na siya kay ana ka ganahan kag fink fink 💗</i></p>
+
+    </div>
 
   </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("letterScreen").style.display = "flex";
+    }
+  </script>
 
 </body>
 </html>
