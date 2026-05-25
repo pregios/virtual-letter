@@ -2,28 +2,35 @@
 <html>
 <head>
   <title>Virtual Letter</title>
-  <style>
-    body {
-      background-color: #fbeaea;
-      font-family: Arial;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+ <style>
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .letter {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
+  background: url("YOUR-IMAGE-LINK.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
-    h1 {
-      text-align: center;
-    }
-  </style>
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.floating-letter {
+  font-size: 40px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+</style>
 </head>
 <body>
 
